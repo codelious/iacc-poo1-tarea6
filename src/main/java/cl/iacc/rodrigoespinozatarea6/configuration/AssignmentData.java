@@ -19,15 +19,26 @@ public class AssignmentData {
     }
 
     @SuppressWarnings("OptionalGetWithoutIsPresent")
-    public Assignment get(String id) {
-        return assignmentList.stream().filter(assignment -> assignment.getId().equalsIgnoreCase(id)).findFirst().get();
+    public Assignment get(Long id) {
+        return assignmentList.stream().filter(assignment -> assignment.getId().equals(id)).findFirst().get();
     }
 
     public List<Assignment> getAll() {
         return assignmentList;
     }
 
-    public void delete(String id) {
+    public void delete(Long id) {
         this.assignmentList.remove(get(id));
+    }
+
+    public Long getNextId() {
+        Long maxId = 0L;
+        for (Assignment assignment : assignmentList) {
+            Long actualId = assignment.getId();
+            if (actualId > maxId) {
+                maxId = actualId;
+            }
+        }
+        return maxId + 1;
     }
 }

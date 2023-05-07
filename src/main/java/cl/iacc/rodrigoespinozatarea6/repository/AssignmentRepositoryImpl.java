@@ -23,7 +23,7 @@ public class AssignmentRepositoryImpl implements AssignmentRepository {
     }
 
     @Override
-    public Assignment findById(String id) {
+    public Assignment findById(Long id) {
         return assignmentData.get(id);
     }
 
@@ -33,7 +33,7 @@ public class AssignmentRepositoryImpl implements AssignmentRepository {
     }
 
     @Override
-    public void remove(String id) {
+    public void remove(Long id) {
         assignmentData.delete(id);
     }
 }

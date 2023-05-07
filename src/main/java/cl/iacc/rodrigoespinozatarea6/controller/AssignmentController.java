@@ -27,7 +27,7 @@ public class AssignmentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Assignment> getById(@PathVariable String id) {
+    public ResponseEntity<Assignment> getById(@PathVariable Long id) {
         return new ResponseEntity<>(assignmentService.findById(id), HttpStatus.OK);
     }
 
@@ -36,7 +36,7 @@ public class AssignmentController {
         return new ResponseEntity<>(assignmentService.findAll(), HttpStatus.OK);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> remove(@PathVariable String id) {
+    public ResponseEntity<Void> remove(@PathVariable Long id) {
         assignmentService.remove(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

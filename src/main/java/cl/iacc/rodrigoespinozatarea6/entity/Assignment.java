@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Setter
 public class Assignment {
 
-    private String id;
+    private Long id;
     private LocalDate date;
     private Employee employee;
     private Notebook notebook;

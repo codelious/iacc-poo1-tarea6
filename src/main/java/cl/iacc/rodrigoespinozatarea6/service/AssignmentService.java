@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AssignmentService {
     Assignment create(Assignment assignment);
-    Assignment findById(String id);
+    Assignment findById(Long id);
     List<Assignment> findAll();
-    void remove(String id);
+    void remove(Long id);
 }
