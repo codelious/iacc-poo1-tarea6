@@ -5,6 +5,9 @@ import cl.iacc.rodrigoespinozatarea6.entity.Assignment;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Rodrigo Espinoza
+ */
 public class AssignmentData {
 
     private final List<Assignment> assignmentList;
@@ -31,8 +34,14 @@ public class AssignmentData {
         this.assignmentList.remove(get(id));
     }
 
+
+    /**
+     * This method calculates the next id for the assignments
+     * @return A long value with the next valid ID
+     */
     public Long getNextId() {
         Long maxId = 0L;
+        // for each assignment get the actual id and compare it with the maxId
         for (Assignment assignment : assignmentList) {
             Long actualId = assignment.getId();
             if (actualId > maxId) {

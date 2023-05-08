@@ -10,18 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @Controller
 @RequestMapping("/employee")
 public class EmployeeController {
-
 
     final EmployeeService employeeService;
     @Autowired
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
-
 
     @PostMapping
     public ResponseEntity<Employee> create(@RequestBody Employee employee) {
